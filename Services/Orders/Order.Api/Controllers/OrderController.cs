@@ -18,7 +18,7 @@ namespace Order.Api.Controllers
 
         [HttpPost(Name = "GetOrders")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult<string>> SaveContactPerson([FromBody] GetOrdersCommand command)
+        public async Task<ActionResult<string>> GetOrders([FromBody] GetOrdersCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

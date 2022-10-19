@@ -14,10 +14,6 @@ namespace Order.Application.Features.Orders.Commands.GetOrders
         public async Task<string> Handle(GetOrdersCommand request, CancellationToken cancellationToken)
         {
 
-            _fruugoBase.Type = "OrdersResponseList";
-            _fruugoBase.Payload = JsonConvert.SerializeObject(request);
-
-            //var response = await _restClientHelper.PostAsync($"{_baseUrl}/orders", _fruugoBase, _headers);
             var response = await _restClientHelper.PostAsync($"{_baseUrl}/orders", request, _headers);
 
             return response;

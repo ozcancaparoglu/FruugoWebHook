@@ -1,12 +1,10 @@
 ﻿using MediatR;
 using Product.Application.Features.Products.ValueObjects;
 
-namespace Product.Application.Features.Products.Commands.CreateOrUpdateProduct
+namespace Product.Application.Features.Products.Commands.PartialUpdateProduct
 {
-    public class CreateOrUpdateProductCommand : IRequest<string>
+    public class PartialUpdateProductCommand : IRequest<string>
     {
         public List<ProductList> products { get; set; }
     }
-
-   
 }

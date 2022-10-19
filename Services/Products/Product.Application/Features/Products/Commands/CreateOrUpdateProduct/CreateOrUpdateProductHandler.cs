@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 using Product.Application.Features.Products.Commons;
 
 namespace Product.Application.Features.Products.Commands.CreateOrUpdateProduct

@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Order.Application.Features.Orders.Commons;
 
 namespace Order.Application.Features.Orders.Commands.GetOrders
 {
