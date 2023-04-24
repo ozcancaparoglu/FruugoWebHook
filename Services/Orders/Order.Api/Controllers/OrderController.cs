@@ -5,6 +5,7 @@ using Order.Application.Features.Orders.Commands.ConfirmOrders;
 using Order.Application.Features.Orders.Commands.GetOrders;
 using Order.Application.Features.Orders.Commands.ReturnOrders;
 using Order.Application.Features.Orders.Commands.ShipOrders;
+using Order.Application.Features.Orders.Queries;
 using System.Net;
 
 namespace Order.Api.Controllers
@@ -60,5 +61,12 @@ namespace Order.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPost(Name = "PackingList")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> PackingList([FromBody] GetOrderShipmentsQuery command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
     }
 }
