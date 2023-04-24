@@ -1,6 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Order.Application.Features.Orders.Commands.CancelOrders;
+using Order.Application.Features.Orders.Commands.ConfirmOrders;
 using Order.Application.Features.Orders.Commands.GetOrders;
+using Order.Application.Features.Orders.Commands.ReturnOrders;
+using Order.Application.Features.Orders.Commands.ShipOrders;
 using System.Net;
 
 namespace Order.Api.Controllers
@@ -23,5 +27,38 @@ namespace Order.Api.Controllers
             var result = await _mediator.Send(command);
             return Ok(result);
         }
+
+        [HttpPost(Name = "ConfirmOrders")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> ConfirmOrders([FromBody] ConfirmOrdersCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost(Name = "CancelOrders")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> CancelOrders([FromBody] CancelOrdersCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost(Name = "ReturnOrders")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> ReturnOrders([FromBody] ReturnOrdersCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost(Name = "ShipOrders")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> ShipOrders([FromBody] ShipOrdersCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
     }
 }
