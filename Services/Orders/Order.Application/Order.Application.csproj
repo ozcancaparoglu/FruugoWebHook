@@ -10,6 +10,10 @@
     <Compile Remove="Models\**" />
     <EmbeddedResource Remove="Models\**" />
     <None Remove="Models\**" />
+    <None Remove="Features\Orders\Commands\ConfirmOrders\" />
+    <None Remove="Features\Orders\Commands\CancelOrders\" />
+    <None Remove="Features\Orders\Commands\ReturnOrders\" />
+    <None Remove="Features\Orders\Commands\ShipOrders\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,4 +33,10 @@
     <ProjectReference Include="..\Order.Domain\Order.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Orders\Commands\ConfirmOrders\" />
+    <Folder Include="Features\Orders\Commands\CancelOrders\" />
+    <Folder Include="Features\Orders\Commands\ReturnOrders\" />
+    <Folder Include="Features\Orders\Commands\ShipOrders\" />
+  </ItemGroup>
 </Project>
